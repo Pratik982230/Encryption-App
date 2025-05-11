@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encryption and Signing Application</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Encryption and Signing Application</h1>
+        <div class="actions">
+            <button id="generate-rsa">Generate RSA Keys</button>
+            <button id="generate-ecc">Generate ECC Keys</button>
+        </div>
+        
+        <div class="section">
+            <h2>RSA Encryption</h2>
+            <label for="message-to-encrypt">Message to Encrypt:</label>
+            <textarea id="message-to-encrypt" placeholder="Enter message to encrypt"></textarea>
+            <button id="encrypt-btn">Encrypt</button>
+            <div id="encrypted-message" class="result"></div>
+        </div>
+
+        <div class="section">
+            <h2>RSA Decryption</h2>
+            <label for="message-to-decrypt">Encrypted Message:</label>
+            <textarea id="message-to-decrypt" placeholder="Enter encrypted message"></textarea>
+            <button id="decrypt-btn">Decrypt</button>
+            <div id="decrypted-message" class="result"></div>
+        </div>
+
+        <div class="section">
+            <h2>ECC Signing</h2>
+            <label for="message-to-sign">Message to Sign:</label>
+            <textarea id="message-to-sign" placeholder="Enter message to sign"></textarea>
+            <button id="sign-btn">Sign</button>
+            <div id="signature" class="result"></div>
+        </div>
+
+        <div class="section">
+            <h2>ECC Signature Verification</h2>
+            <label for="message-to-verify">Original Message:</label>
+            <textarea id="message-to-verify" placeholder="Enter original message"></textarea>
+            <label for="signature-to-verify">Signature:</label>
+            <textarea id="signature-to-verify" placeholder="Enter signature"></textarea>
+            <button id="verify-btn">Verify</button>
+            <div id="verification-result" class="result"></div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
